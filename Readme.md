@@ -35,57 +35,11 @@ kubectl get ns
 ```
 ## Step 2: Create Persistent Volume and Persistent Volume Claim
 A Prometheus deployment needs dedicated storage space to store scraping data.
+1. apply pv.yaml file to deploy persistent volume.
 ```
-vi pv.yaml
+kubectl apply -f pv.yaml
 ```
-1. Paste the following configuration into the file.
-```
-piVersion: v1
-kind: PersistentVolume
-metadata:
-  name: pv-1
-  labels:
-    type: local
-spec:
-  capacity:
-    storage: 20Gi
-  accessModes:
-    - ReadWriteMany
-  hostPath:
-    path: "/mnt/data"
-```
-2. to create pvc add new file pv-pvc and paste the following configuration 
-```
-vi pv-pvc.yaml
-```
-```
-apiVersion: v1
-
-kind: PersistentVolumeClaim
-
-metadata:
-
-  name: pvc-data
-
-  namespace: monitoring
-
-  labels:
-
-    app: prometheus-deployment
-
-spec:
-
-  accessModes:
-
-    - ReadWriteMany
-
-  resources:
-
-    requests:
-
-      storage: 500Mi
-```
-3.  Apply the configuration with kubectl.
+2. to create pvc apply pv-pvc.yaml file configuration 
 ```
 kubectl apply -f pv-pvc.yaml
 ```
