@@ -11,19 +11,19 @@ metadata:
 spec:
   rules:
   # Use the host you used in your kubernetes Ingress Configurations
-  - host: prometheus.example.com
+  - host: rancher.com
     http:
       paths:
       - backend:
           service:
             name: prometheus-service
             port:
-              number: 8080
+              number: 80
         path: /
         pathType: Prefix
   tls:
   - hosts: 
-    - prometheus.apps.shaker242.lab
+    - rancher.com
     secretName: prometheus-secret
 ---
 apiVersion: v1 
