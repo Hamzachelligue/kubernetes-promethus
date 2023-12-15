@@ -87,7 +87,7 @@ kubectl apply -f prometheus-configmap.yaml
 ```
 kubectl apply -f prometheus-daemonset.yaml
 ```
-## finally we have to expose node 
+## finally we have to expose our nodes 
 ```
 kubectl apply -f ds-service.yaml
 ```
