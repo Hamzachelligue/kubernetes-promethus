@@ -46,7 +46,7 @@ spec:
       - name: prometheus-config-volume
         configMap:
             defaultMode: 420
-            name: prometheus-config
+            name: prometheus-server-conf
 
       - name: prometheus-storage-volume
         persistentVolumeClaim:
