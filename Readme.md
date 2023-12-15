@@ -77,5 +77,5 @@ kubectl apply -f prometheus-service.yaml
 ## Step 7: Expose your promethus on public using ingress
 You can view the deployed Prometheus dashboard using ingress
 ```
-kubectl apply -f prometheus-service.yaml
+kubectl apply -f prometheus-ingress.yaml
 ```
