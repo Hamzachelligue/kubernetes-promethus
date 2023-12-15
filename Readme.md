@@ -79,3 +79,11 @@ You can view the deployed Prometheus dashboard using ingress
 ```
 kubectl apply -f prometheus-ingress.yaml
 ```
+## Step 8 add configmap to connect prometheus to nodes
+```
+kubectl apply -f prometheus-configmap.yaml
+```
+## Step 9 : install node-exporter on all nodes using daemonset
+```
+kubectl apply -f prometheus-daemonset.yaml
+```
